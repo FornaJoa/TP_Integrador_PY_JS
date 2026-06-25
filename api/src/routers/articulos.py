@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Path, Query, HTTPException
 from typing import Annotated
-from src.schemas.articulos import ArticuloSchema, ArticuloUpdateSchema
+from schemas.articulos import ArticuloSchema, ArticuloUpdateSchema
 
 router = APIRouter(prefix="/articulos")
 
