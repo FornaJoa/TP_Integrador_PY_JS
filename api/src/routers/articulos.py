@@ -50,7 +50,7 @@ async def post_articulo(articulo_nuevo: ArticuloSchema):
 @router.delete('/{id}', responses=not_found, response_model=list[ArticuloSchema])
 async def delete_articulo_by_id(
     id: Annotated[int, Path(gt=0, description='ID del articulo a eliminar')],
-    logico: Annotated[bool, Query(description='Mantener articulo? (True = SI / False = NO)')] = False
+    logico: Annotated[bool, Query(description='¿Aplicar borrado logico? (True = Desactivar / False = Borrado físico)')] = False
 ) -> list[ArticuloSchema]:
     for articulo in articulos:
         if articulo['id'] == id:
